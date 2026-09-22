@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque Geek Store</title>
+    
+    <!-- COLANDO O CSS DIRETO AQUI PARA NÃO PRECISAR DE ARQUIVO EXTERNO -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f131a;
+            color: #cbd5e1;
+            padding: 30px 15px;
+            line-height: 1.4;
+        }
+
+        .wrapper {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .topo-sistema {
+            margin-bottom: 25px;
+        }
+
+        .topo-sistema h1 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .topo-sistema p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        .board-contexto {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .card-contexto {
+            background-color: #1a202c;
+            border: 1px solid #2d3748;
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        .card-contexto strong {
+            color: #f1f5f9;
+        }
+
+        .painel-flex {
+            display: flex;
+            gap: 30px;
+        }
+
+        .coluna-tabela {
+            flex: 2;
+        }
+
+        .coluna-tabela h2 {
+            font-size: 1.1rem;
+            color: #f1f5f9;
+            margin-bottom: 12px;
+        }
+
+        .coluna-notas {
+            flex: 1;
+        }
+
+        .overflow-tabela {
+            background-color: #1a202c;
+            border: 1px solid #2d3748;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background-color: #232d3f;
+            color: #fff;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #2d3748;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tag {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .tag-critica {
+            background-color: #742a2a;
+            color: #feb2b2;
+        }
+
+        .tag-normal {
+            background-color: #234e52;
+            color: #9ae6b4;
+        }
+
+        .coluna-notas h3 {
+            font-size: 1.1rem;
+            color: #a855f7;
+            margin-bottom: 12px;
+        }
+
+        .nota-card {
+            background-color: #111622;
+            border-left: 3px solid #a855f7;
+            padding: 15px;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 15px;
+        }
+
+        .nota-card h4 {
+            font-size: 0.9rem;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .nota-card p {
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 850px) {
+            .painel-flex {
+                flex-direction: column;
+            }
+            .overflow-tabela {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    
+    <header class="topo-sistema">
+        <h1>Geek Store Stock 👾</h1>
+        <p>Dashboard de teste para validação de dados com o Júnior</p>
+    </header>
+
+    <div class="board-contexto">
+        <div class="card-contexto">
+            <strong>Dev/Student:</strong> Ruan (Data Science)
+        </div>
+        <div class="card-contexto">
+            <strong>Banco Atual:</strong> PostgreSQL (Localhost/Docker)
+        </div>
+        <div class="card-contexto">
+            <strong>Integração:</strong> Node.js + React (Em andamento)
+        </div>
+    </div>
+
+    <div class="painel-flex">
+        
+        <main class="coluna-tabela">
+            <h2>Itens Cadastrados (Validação de Preço de Custo vs Venda)</h2>
+            <div class="overflow-tabela">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Categoria</th>
+                            <th>Custo</th>
+                            <th>Preço Venda</th>
+                            <th>Margem Líquida</th>
+                            <th>Qtd</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Action Figure Luffy Gear 5</td>
+                            <td>Action Figures</td>
+                            <td>R$ 150,00</td>
+                            <td>R$ 280,00</td>
+                            <td>46.4%</td>
+                            <td>2</td>
+                            <td><span class="tag tag-critica">Acabando</span></td>
+                        </tr>
+                        <tr>
+                            <td>Iron Man Mark LXXXV Deluxe</td>
+                            <td>Hot Toys</td>
+                            <td>R$ 1.200,00</td>
+                            <td>R$ 2.100,00</td>
+                            <td>42.8%</td>
+                            <td>5</td>
+                            <td><span class="tag tag-normal">Ok</span></td>
+                        </tr>
+                        <tr>
+                            <td>Mangá Jujutsu Kaisen Vol. 22</td>
+                            <td>Mangás</td>
+                            <td>R$ 22,00</td>
+                            <td>R$ 39,90</td>
+                            <td>44.8%</td>
+                            <td>15</td>
+                            <td><span class="tag tag-normal">Ok</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <aside class="coluna-notas">
+            <h3>📝 Ideias de Modelagem para o Júnior</h3>
+            
+            <div class="nota-card">
+                <h4>Sobre a margem de lucro:</h4>
+                <p>Júnior, criei uma TRIGGER simples direto no Postgres. Toda vez que você atualizar o preço de custo ou o preço de venda, o banco calcula a margem sozinho. Não precisa fazer conta na mão.</p>
+            </div>
+
+            <div class="nota-card">
+                <h4>Próxima entrega (Análise Preditiva):</h4>
+                <p>Quando a loja tiver uns 3 ou 4 meses de histórico de vendas salvos nessa tabela, quero puxar esses dados no Jupyter Notebook para calcular a velocidade de giro. Assim a gente prevê qual Hot Toys corre risco de ficar encalhado.</p>
+            </div>
+        </aside>
+
+    </div>
+</div>
+
+</body>
+</html>
